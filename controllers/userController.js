@@ -24,6 +24,7 @@ exports.validateRegister = (req, res, next) => {
     req.checkBody('password-confirm', 'Oops, your passwords do not match!').equals(req.body.password);
 
     const errors = req.validationErrors();
+    
     if (errors) {
         req.flash('error', errors.map(err => err.msg));
         res.render('register', { title: 'Register', body: req.body, flashes: req.flash() });
@@ -35,8 +36,14 @@ exports.validateRegister = (req, res, next) => {
 exports.register = async (req, res, next) => {
     const user = new User({ email: req.body.email, name: req.body.name, });
     const register = promisify(User.register, User);
-    await register(user, req.body.password);
-    next(); // pass to authController.login
+    try {
+        await register(user, req.body.password);
+        next(); // pass to authController.login
+    } catch(e) {
+        const backURL = req.header('Referer');
+        req.flash('error', e.message);
+        res.redirect(backURL)
+    }
 }
 
 exports.account = (req, res) => {
