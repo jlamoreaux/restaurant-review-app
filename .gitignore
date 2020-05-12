@@ -1,0 +1,9 @@
+.vercel
+node_modules/
+.DS_Store
+*.log
+.idea
+haters/
+variables.env
+variables.env.now
+*.env
