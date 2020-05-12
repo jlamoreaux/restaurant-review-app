@@ -22,13 +22,13 @@ CRUD functionality with stores, reviews and users.
 ### Required Variables
 
 In your `variables.env` file, you will need the following information:
-    - NODE_ENV [production or development]
-    - DATABASE [mongoDB server]
-    - MAIL_USER [username for mail service]
-    - MAIL_PASS [password for mail service]
-    - MAIL_HOST [smtp address for mail service]
-    - MAIL_PORT [port for mail service]
-    - PORT [80 if in production, otherwise you choose. I use 5000]
-    - MAP_KEY [Google Maps API Key]
-    - SECRET [I used `snickers` but you can use something else]
-    - KEY [i used `sweetsesh` but again this can be changed]
+- NODE_ENV [production or development]
+- DATABASE [mongoDB server]
+- MAIL_USER [username for mail service]
+- MAIL_PASS [password for mail service]
+- MAIL_HOST [smtp address for mail service]
+- MAIL_PORT [port for mail service]
+- PORT [80 if in production, otherwise you choose. I use 5000]
+- MAP_KEY [Google Maps API Key]
+- SECRET [I used `snickers` but you can use something else]
+- KEY [i used `sweetsesh` but again this can be changed]
